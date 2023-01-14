@@ -3,8 +3,10 @@ const express = require('express');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.render('index', { title: 'Hey', message: 'Hello there!' });
 });
 
 app.get('/api', (req, res) => {
